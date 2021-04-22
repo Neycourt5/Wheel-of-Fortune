@@ -1,3 +1,9 @@
+body{
+    margin: 0;
+    background-color: black;
+    font-family: arial;
+}
+
 .game-container{
     display: flex;
     justify-content: center;
@@ -6,7 +12,8 @@
 .board-container{
     font-size: 0;
     border: 10px solid blue;    
-    height: 700px;
+    border-radius:10%;
+    height: 600px;
     width: 1000px;
     display: flex;
     flex-wrap: wrap;
@@ -16,18 +23,86 @@
 }
 
 .square{
-    background-color: lightgreen;
-    height: 80px;
-    width: 60px;
+    background-color: darkgreen;
+    height: 65px;
+    width: 65px;
     border: 1px solid black;
     display: inline-block;
     margin-left: -1px;
     margin-top: -1px;
 }
 
+/* .end{
+    background-color: gray;
+} */
+
 .lettersquare {
     background-color:white;
     font-size: 20px;
     text-align: center;
-    
+    transition: 2s;
+}
+
+.buttonscontainer {
+    margin-top: 30px;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+button{
+    border-radius: 5px;
+    background-color:lightblue;
+    padding: 10px;
+}
+
+.playerscontainer {
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.player{
+    height: 180px;
+    width: 400px;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+}
+.playername{
+    margin-top: 10px;
+    margin-left: 125px;
+    margin-bottom: 50px;
+    width: 150px;
+    height: 50px;
+    background-color:white;
+    display: flex;
+    justify-content:space-around;
+    background-color:black;
+}
+
+.playername span{
+    margin-top: 12.5px;
+    font-weight: bold;
+    color: yellow;
+}
+
+.scorebox{
+    text-align: right;
+    background-color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 55px;
+    color: yellow;
+}
+.scorebox span{
+    margin-right: 10px;
+}
+
+.player1{
+    background-color: red;
+}
+.player2{
+    background-color: blue;
+}
+.player3{
+    background-color: green;
 }

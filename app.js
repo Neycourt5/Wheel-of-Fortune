@@ -10,7 +10,21 @@ let testPhrase = "My name is Alex"
 //testPhrase = testPhrase.split('').filter(char => /[a-zA-Z]/.test(char));
 //i need to find a way to filter commas and periods out of the string so we dont create unneeded spaces on the board
 
+//varables to determinte the state of the game (3 rounds before game over)
+let gameOver = false;
+let roundNum = 1;
+
+const game = () => {
+    // while (gameOver === false) {
+
+    // }
+}
+
+
+
 let letters = testPhrase.split("")
+
+
 const populateSquares = (phrase) => {
     //make it start on the start square on the second row if its not too long
     let words = phrase.split(" ")
