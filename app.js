@@ -1,7 +1,8 @@
+//very first thing to do is display a pop up where you can type team names
+
 
 //select the playable squares to generate a word on
 const playableSquares = document.querySelectorAll('.playable')
-//44 playable squares
 
 //The starting square if the phrase is not too long
 const startingSquare = playableSquares[11]
