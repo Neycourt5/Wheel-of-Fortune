@@ -72,6 +72,7 @@ button{
     margin-top: 10px;
     margin-left: 125px;
     margin-bottom: 50px;
+    border-radius: 10%;
     width: 180px;
     height: 50px;
     font-size: 20px;
@@ -92,6 +93,7 @@ button{
     background-color: black;
     margin-left: 10px;
     margin-right: 10px;
+    border-radius: 10%;
     font-size: 55px;
     color: yellow;
 }
