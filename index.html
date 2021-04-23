@@ -10,7 +10,19 @@
 </head>
 
 <body>
-    <div class="game-container">
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <div><label for="p1name">Team 1 name:</label></div>
+            <input type="text" id="p1nameinput" name="p1name">
+            <div><label for="p2name">Team 2 name:</label></div>
+            <input type="text" id="p2nameinput" name="p2name">
+            <div><label for="p3name">Team 3 name:</label></div>
+            <input type="text" id="p3nameinput" name="p3name">
+            <div><button id="submitnames">Start</button></div>
+        </div>
+    </div>
+    <div class="game-container none">
         <div class="board-container">
             <div class="row-1">
                 <div class="square end"></div>
@@ -139,35 +151,35 @@
         </div>
 
     </div>
-    <div class="buttonscontainer">
+    <div class="buttonscontainer none">
         <button id="newgamebtn">New Game</button>
         <button id="spinwheelbtn">Spin The Wheel</button>
         <button id="solvebtn">Solve</button>
         <button id="inputbtn">Input Letter</button>
     </div>
-    <div class="playerscontainer">
+    <div class="playerscontainer none">
         <div class="player player1">
             <div class="playername">
-                <span>Player 1</span>
+                <div id="p1namedisplay">Player 1</div>
             </div>
             <div class="scorebox">
-                <span id="p1score">0</span>
+                <div id="p1score">0</div>
             </div>
         </div>
         <div class="player player2">
             <div class="playername">
-                <span>Player 2</span>
+                <div id="p2namedisplay">Player 2</div>
             </div>
             <div class="scorebox">
-                <span id="p2score">0</span>
+                <div id="p2score">0</div>
             </div>
         </div>
         <div class="player player3">
             <div class="playername">
-                <span>Player 3</span>
+                <div id="p3namedisplay">Player 3</div>
             </div>
             <div class="scorebox">
-                <span id="p3score">0</span>
+                <div id="p3score">0</div>
             </div>
         </div>
 
