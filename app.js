@@ -36,6 +36,7 @@ modalBtn.addEventListener("click", (e) => {
     p2Name.textContent = p2NameInput.value
     p3Name.textContent = p3NameInput.value
     //newRound()
+    game()
 })
 
 
@@ -57,68 +58,69 @@ let roundNum = 1;
 // }
 
 
-
-//populates the board with white squares
-const populateSquares = (phrase) => {
-    //make it start on the start square on the second row if its not too long
-    let words = phrase.split(" ")
-    let wordLetters = phrase.split("")
-    let position = 10
-    let remainSpace = 12
-    let repositionCount = 0
-    console.log(phrase)
-    //populate the board with white squares
-    for (word of words) {
-        //repositions the word to a new line if it wont fit
-        if (word.trim().length > remainSpace) {
-            position += remainSpace
-            remainSpace = 12
-            repositionCount++
-        }
-        for (let i = 0; i < word.length; i++) {
-            if (word[i].trim().match(/[a-z]/i)) {
-                playableSquares[position].classList.add('lettersquare')
+const game = () => {
+    //populates the board with white squares
+    const populateSquares = (phrase) => {
+        //make it start on the start square on the second row if its not too long
+        let words = phrase.split(" ")
+        let wordLetters = phrase.split("")
+        let position = 10
+        let remainSpace = 12
+        let repositionCount = 0
+        console.log(phrase)
+        //populate the board with white squares
+        for (word of words) {
+            //repositions the word to a new line if it wont fit
+            if (word.trim().length > remainSpace) {
+                position += remainSpace
+                remainSpace = 12
+                repositionCount++
             }
+            for (let i = 0; i < word.length; i++) {
+                if (word[i].trim().match(/[a-z]/i)) {
+                    playableSquares[position].classList.add('lettersquare')
+                }
+                position++
+                remainSpace--
+            }
+            //end of the word so this establishes a space between words
             position++
             remainSpace--
         }
-        //end of the word so this establishes a space between words
-        position++
-        remainSpace--
     }
-}
 
-//Make game here
-const phrases = ["My name is Alex", "I like to play baseball", "This is bullshit", "Sally sold sea shells"]
-let gamePhrase = phrases[(Math.floor(Math.random() * phrases.length))]
-populateSquares(gamePhrase)
-// //new game/round function
-// const newRound = () => {
-//     let gamePhrase = phrases[(Math.floor(Math.random() * phrases.length))]
-//     populateSquares(gamePhrase)
-// }
+    //Make game here
+    const phrases = ["My name is Alex", "I like to play baseball", "This is bullshit", "Sally sold sea shells"]
+    let gamePhrase = phrases[(Math.floor(Math.random() * phrases.length))]
+    populateSquares(gamePhrase)
+    // //new game/round function
+    // const newRound = () => {
+    //     let gamePhrase = phrases[(Math.floor(Math.random() * phrases.length))]
+    //     populateSquares(gamePhrase)
+    // }
 
-//select the white letter squares
-const letterSquares = document.querySelectorAll('.lettersquare')
-
+    //select the white letter squares
+    const letterSquares = document.querySelectorAll('.lettersquare')
 
 
-//listen for key presses
-document.addEventListener('keyup', (e) => {
-    let letters = gamePhrase.split("")
-    letters = letters.filter(function (str) {
-        return /\S/.test(str);
-    });
-    if (letters.includes(e.key.toUpperCase()) || letters.includes(e.key)) {
-        for (let i = 0; i < letters.length; i++) {
-            if (letters[i] === e.key.toUpperCase()) {
-                letterSquares[i].textContent = e.key.toUpperCase();
-            }
-            else if (letters[i] === e.key) {
-                letterSquares[i].textContent = e.key
+
+    //listen for key presses
+    document.addEventListener('keyup', (e) => {
+        let letters = gamePhrase.split("")
+        letters = letters.filter(function (str) {
+            return /\S/.test(str);
+        });
+        //search white spaces for letters and replace add letters into squares
+        if (letters.includes(e.key.toUpperCase()) || letters.includes(e.key)) {
+            for (let i = 0; i < letters.length; i++) {
+                if (letters[i] === e.key.toUpperCase()) {
+                    letterSquares[i].textContent = e.key.toUpperCase();
+                }
+                else if (letters[i] === e.key) {
+                    letterSquares[i].textContent = e.key
+                }
             }
         }
-    }
-})
-//search white squares for the letter and then change it to
+    })
+}
 
