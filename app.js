@@ -58,6 +58,18 @@ modalBtn.addEventListener("click", (e) => {
     game()
 })
 
+// Split into two functions 
+// Game flow is:
+// 1.Becomes a players turn 
+// 2. Check for their guess
+// 3. If true, replace the letters square
+// 4. If false, move to next player
+
+//maybe something like
+// //if (checkForLetter) {
+//     replaceLetters()
+// } else {initTurn()}
+
 const checkForLetter = (e, gamePhrase, player) => {
     //select the white letter squares
     const letterSquares = document.querySelectorAll('.lettersquare')
